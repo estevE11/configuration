@@ -1,9 +1,5 @@
 adoptopenjdk
-burp-suite
-eloston-chromium
 firefox
-flux
-kindle
 obs
 qbittorrent
 rectangle
@@ -15,5 +11,4 @@ virtualbox
 visual-studio-code
 vlc
 wireshark
-xquartz
 zotero
