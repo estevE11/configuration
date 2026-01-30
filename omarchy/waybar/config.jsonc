@@ -2,17 +2,25 @@
   "reload_style_on_change": true,
   "layer": "top",
   "position": "top",
-  "spacing": 0,
+  "spacing": 4,
   "height": 26,
-  "modules-left": ["custom/omarchy", "hyprland/workspaces"],
-  "modules-center": ["clock", "custom/update", "custom/screenrecording-indicator"],
+  "modules-left": [
+    "custom/omarchy",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock#local",
+    "clock#chicago",
+    "custom/update",
+    "custom/screenrecording-indicator"
+  ],
   "modules-right": [
     "group/tray-expander",
-    "bluetooth",
-    "network",
     "pulseaudio",
+    "network",
     "cpu",
-    "battery"
+    "memory",
+    "custom/lock"
   ],
   "hyprland/workspaces": {
     "on-click": "activate",
@@ -53,67 +61,55 @@
     "signal": 7,
     "interval": 21600
   },
-
+  "clock#local": {
+    "interval": 60,
+    "format": "{:%H:%M | %a %d %b}",
+    "tooltip-format": "{:%Y-%m-%d}"
+  },
+  "clock#chicago": {
+    "interval": 60,
+    "timezone": "America/Chicago",
+    "format": "({:%I:%M %p})",
+    "tooltip": false
+  },
   "cpu": {
     "interval": 5,
-    "format": "󰍛",
+    "format": " {usage}%",
+    "tooltip": false,
     "on-click": "omarchy-launch-or-focus-tui btop"
   },
-  "clock": {
-      "interval": 60,
-      "format": "{:%H:%M | %a %d %b}",
-      "tooltip-format": "{:%Y-%m-%d}"
+  "memory": {
+    "interval": 5,
+    "format": " {used:0.1f}G/{total:0.1f}G"
   },
   "network": {
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-    "format": "{icon}",
-    "format-wifi": "{icon}",
-    "format-ethernet": "󰀂",
-    "format-disconnected": "󰤮",
-    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "tooltip-format-disconnected": "Disconnected",
+    "format-ethernet": " Ethernet",
+    "format-wifi": "  {signalStrength}%",
+    "format-disconnected": "⚠ Disconnected",
+    "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
     "interval": 3,
-    "spacing": 1,
     "on-click": "omarchy-launch-wifi"
   },
-  "battery": {
-    "format": "{capacity}% {icon}",
-    "format-discharging": "{icon}",
-    "format-charging": "{icon}",
-    "format-plugged": "",
-    "format-icons": {
-      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
-      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-    },
-    "format-full": "󰂅",
-    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
-    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
-    "interval": 5,
-    "on-click": "omarchy-menu power",
-    "states": {
-      "warning": 20,
-      "critical": 10
-    }
-  },
-  "bluetooth": {
-    "format": "",
-    "format-disabled": "󰂲",
-    "format-connected": "󰂱",
-    "format-no-controller": "",
-    "tooltip-format": "Devices connected: {num_connections}",
-    "on-click": "omarchy-launch-bluetooth"
-  },
   "pulseaudio": {
-    "format": "{icon}",
-    "on-click": "omarchy-launch-or-focus-tui wiremix",
-    "on-click-right": "pamixer -t",
-    "tooltip-format": "Playing at {volume}%",
-    "scroll-step": 5,
-    "format-muted": "",
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-muted": " Muted",
     "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
       "default": ["", "", ""]
-    }
+    },
+    "scroll-step": 5,
+    "on-click": "pavucontrol",
+    "on-click-right": "pamixer -t"
+  },
+  "custom/lock": {
+    "format": "",
+    "on-click": "swaylock"
   },
   "group/tray-expander": {
     "orientation": "inherit",
@@ -121,7 +117,10 @@
       "transition-duration": 600,
       "children-class": "tray-group-item"
     },
-    "modules": ["custom/expand-icon", "tray"]
+    "modules": [
+      "custom/expand-icon",
+      "tray"
+    ]
   },
   "custom/expand-icon": {
     "format": "",
@@ -136,5 +135,18 @@
   "tray": {
     "icon-size": 12,
     "spacing": 17
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": {
+      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    }
+  },
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-connected": "󰂱",
+    "on-click": "omarchy-launch-bluetooth"
   }
 }
