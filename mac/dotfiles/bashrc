@@ -1,0 +1,13 @@
+alias ls='ls --color'
+export PS1='\u@\h:\[\e[33m\]\w\[\e[0m\]\$ '
+export EDITOR='vim'
+
+export PATH="${HOME}/.local/bin:${PATH}"
+
+# pnpm (if installed via corepack/npm)
+export PNPM_HOME="${HOME}/Library/pnpm"
+case ":${PATH}:" in
+  *":${PNPM_HOME}:"*) ;;
+  *":${PNPM_HOME}/bin:"*) ;;
+  *) export PATH="${PNPM_HOME}/bin:${PATH}" ;;
+esac

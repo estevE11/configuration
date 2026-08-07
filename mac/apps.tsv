@@ -1,0 +1,42 @@
+# GUI apps: official installers. Columns: id	name	kind	source	hint
+# kind=direct  → source is a download URL (may redirect)
+# kind=github  → source is owner/repo; hint is asset name regex
+# kind=page    → open/print download page; you install manually
+# After download, open the file and click through the installer.
+#
+# Skipped on purpose: barrier, betterdisplay, claude-code, codexbar, gimp, hyprspace,
+# insomnia, macfuse, slicer, disk-inventory-x, localsend, excel, powerpoint, onyx,
+# tailscale, claude.app, obsidian, telegram, steam, resolve, acrobat, arduino,
+# gifski, longomatch, open-handball, uniconvert, codemeter, bosca-ceoil, antigravity, lm-studio
+
+chrome	Google Chrome	direct	https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg	GoogleChrome.dmg
+slack	Slack	direct	https://slack.com/ssb/download-osx-universal	Slack.dmg
+docker	Docker Desktop	direct	https://desktop.docker.com/mac/main/arm64/Docker.dmg	Docker.dmg
+vscode	Visual Studio Code	direct	https://update.code.visualstudio.com/latest/darwin-arm64/stable	VSCode-darwin-arm64.zip
+discord	Discord	direct	https://discord.com/api/download?platform=osx	Discord.dmg
+zoom	Zoom	direct	https://zoom.us/client/latest/Zoom.pkg?archType=arm64	Zoom.pkg
+spotify	Spotify	direct	https://download.scdn.co/SpotifyARM64.dmg	SpotifyARM64.dmg
+bitwarden	Bitwarden	direct	https://vault.bitwarden.com/download/?app=desktop&platform=macos&variant=dmg	Bitwarden.dmg
+zotero	Zotero	direct	https://www.zotero.org/download/client/dl?channel=release&platform=mac	Zotero.dmg
+chatgpt	ChatGPT	direct	https://persistent.oaistatic.com/sidekick/public/ChatGPT_Desktop_public_latest.dmg	ChatGPT.dmg
+ticktick	TickTick	direct	https://www.ticktick.com/static/getApp/download?type=mac	TickTick.dmg
+ghostty	Ghostty	page	https://ghostty.org/download	Download Ghostty.dmg (versioned CDN)
+github-desktop	GitHub Desktop	direct	https://central.github.com/deployments/desktop/desktop/latest/darwin-arm64	GitHubDesktop.zip
+vlc	VLC	direct	https://get.videolan.org/vlc/last/macosx/vlc-3.0.23-arm64.dmg	VLC.dmg
+rectangle	Rectangle	github	rxhanson/Rectangle	Rectangle.*\\.dmg
+linearmouse	LinearMouse	github	linearmouse/linearmouse	LinearMouse\\.dmg
+middleclick	MiddleClick	github	artginzburg/MiddleClick	MiddleClick\\.zip
+swift-quit	Swift Quit	github	onebadidea/swiftquit	Swift\\.Quit\\.zip
+claudebar	ClaudeBar	github	tddworks/ClaudeBar	ClaudeBar-.*\\.dmg
+obs	OBS	github	obsproject/obs-studio	OBS-Studio-.*-macOS-Apple\\.dmg
+zen	Zen Browser	github	zen-browser/desktop	zen\\.macos-universal\\.dmg
+balenaetcher	balenaEtcher	github	balena-io/etcher	balenaEtcher-.*-arm64\\.dmg
+tinycast	Tinycast	github	abue-ammar/tinycast	Tinycast-.*\\.dmg
+instant-space-switcher	Instant Space Switcher	github	jurplel/InstantSpaceSwitcher	InstantSpaceSwitcher-.*\\.dmg
+cursor	Cursor	page	https://cursor.com/download?platform=mac	Download macOS build from site
+whatsapp	WhatsApp	page	https://www.whatsapp.com/download	macOS installer from site
+spark	Spark	page	https://sparkmailapp.com/download	Spark Desktop for Mac
+notion-calendar	Notion Calendar	page	https://www.notion.com/product/calendar/download	Notion Calendar for Mac
+the-unarchiver	The Unarchiver	page	https://theunarchiver.com/	Mac App Store or site download
+t3-code	T3 Code	page	https://t3.chat/	Alpha / official desktop build
+xcode	Xcode	page	https://apps.apple.com/app/xcode/id497799835	App Store

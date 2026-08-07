@@ -1,0 +1,20 @@
+# System / dev plumbing only — GUI apps use official DMGs (see apps.tsv).
+# Language toolchains: nvm (Node), uv (Python), rustup (Rust), Go .pkg — not brew.
+
+brew "cmake"
+brew "curl"
+brew "ffmpeg"
+brew "gh"
+brew "git"
+brew "git-lfs"
+brew "htop"
+brew "jq"
+brew "nmap"
+brew "neofetch"
+brew "openssl@3"
+brew "pkg-config"
+brew "ripgrep"
+brew "tmux"
+brew "vim"
+brew "wget"
+brew "libomp"
